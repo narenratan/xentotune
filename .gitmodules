@@ -1,0 +1,12 @@
+[submodule "libs/signalsmith-stretch"]
+	path = libs/signalsmith-stretch
+	url = https://github.com/Signalsmith-Audio/signalsmith-stretch
+[submodule "libs/clap"]
+	path = libs/clap
+	url = https://github.com/free-audio/clap.git
+[submodule "libs/MTS-ESP"]
+	path = libs/MTS-ESP
+	url = https://github.com/ODDSound/MTS-ESP.git
+[submodule "libs/doctest"]
+	path = libs/doctest
+	url = https://github.com/doctest/doctest.git
