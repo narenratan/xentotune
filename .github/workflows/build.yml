@@ -1,0 +1,30 @@
+name: build
+run-name: build
+on: [push]
+jobs:
+  build:
+    name: build ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            testexe: Release/tests.exe
+          - os: macos-latest
+            testexe: tests
+          - os: ubuntu-latest
+            testexe: tests
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+        with:
+            submodules: 'true'
+      - name: Build
+        run: |
+            cmake -B build -DCMAKE_BUILD_TYPE=Release
+            cmake --build build
+            ls build
+      - name: Test
+        run: |
+            ./build/${{ matrix.testexe }}
