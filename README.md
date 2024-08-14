@@ -13,5 +13,5 @@ Uses [MTS-ESP](https://github.com/ODDSound/MTS-ESP) to pull the tuning.
     $ git clone --recurse-submodules https://github.com/narenratan/xentotune
     $ cd xentotune
     $ cmake -B build -DCMAKE_BUILD_TYPE=Release
-    $ cmake --build build
+    $ cmake --build build --config Release
 ```
