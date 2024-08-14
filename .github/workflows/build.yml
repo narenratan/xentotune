@@ -10,10 +10,13 @@ jobs:
       matrix:
         include:
           - os: windows-latest
+            plugin: Release/Xentotune.clap
             testexe: Release/tests.exe
           - os: macos-latest
+            plugin: Xentotune.clap
             testexe: tests
           - os: ubuntu-latest
+            plugin: Xentotune.clap
             testexe: tests
     steps:
       - name: Check out repository code
@@ -28,3 +31,7 @@ jobs:
       - name: Test
         run: |
             ./build/${{ matrix.testexe }}
+      - uses: actions/upload-artifact@v4
+        with:
+            name: xentotune_${{ github.sha }}_${{ matrix.os }}
+            path: build/${{ matrix.plugin }}

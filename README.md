@@ -7,6 +7,9 @@ library to do the pitch shifting.
 
 Uses [MTS-ESP](https://github.com/ODDSound/MTS-ESP) to pull the tuning.
 
+Built plugins are available for Mac, Windows, and Linux on the github
+[releases page](https://github.com/narenratan/xentotune/releases).
+
 ## Build
 
 ```console
