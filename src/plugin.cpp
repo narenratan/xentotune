@@ -149,9 +149,6 @@ static const clap_plugin_t pluginClass = {
         assert(process->audio_inputs_count == 1);
 
         const uint32_t frameCount = process->frames_count;
-        const uint32_t inputEventCount = process->in_events->size(process->in_events);
-        uint32_t eventIndex = 0;
-        uint32_t nextEventFrame = inputEventCount ? 0 : frameCount;
 
         plugin->stretch.process(process->audio_inputs[0].data32, frameCount,
                                 process->audio_outputs[0].data32, frameCount);
